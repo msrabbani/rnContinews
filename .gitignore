@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -103,7 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
-=======
 # OSX
 #
 .DS_Store
@@ -163,4 +161,3 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
->>>>>>> rn init
