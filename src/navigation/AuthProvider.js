@@ -13,12 +13,26 @@ export const AuthProvider = ({children}) => {
         setUser,
         signin: async (email, password) => {
           try {
-            await auth().signInWithEmailAndPassword(email, password);
+            await auth()
+              .signInWithEmailAndPassword(email, password)
+              .then(() => {
+                console.log('User account created & signed in!');
+              })
+              .catch((error) => {
+                if (error.code === 'auth/email-already-in-use') {
+                  console.log('That email address is already in use!');
+                }
+
+                if (error.code === 'auth/invalid-email') {
+                  console.log('That email address is invalid!');
+                }
+                console.error(error);
+              });
           } catch (e) {
             console.log(e);
           }
         },
-        signup: async (email, username, password) => {
+        signup: async (email, password) => {
           try {
             await auth().createUserWithEmailAndPassword(email, password);
           } catch (e) {
