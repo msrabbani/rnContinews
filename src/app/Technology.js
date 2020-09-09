@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import styled from 'styled-components/native';
 import NewsList from '../components/NewsList';
 import Loading from '../components/Loading';
+
+import {Container, ListWrapper} from './../styles';
 
 let url = 'https://afternoon-cove-94635.herokuapp.com/news?category=Technology';
 let req = new Request(url);
@@ -42,10 +43,3 @@ export default function Technology({navigation}) {
     </Container>
   );
 }
-
-const ListWrapper = styled.View``;
-
-const Container = styled.SafeAreaView`
-  flex: 1;
-  background-color: #ddf5ff;
-`;

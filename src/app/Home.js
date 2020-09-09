@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import styled from 'styled-components/native';
 import SearchBar from '../components/SearchBar';
 import NewsList from '../components/NewsList';
 import Loading from '../components/Loading';
+
+import {Container, ListWrapper} from './../styles';
 
 let url = 'https://afternoon-cove-94635.herokuapp.com/news';
 let req = new Request(url);
@@ -66,16 +67,3 @@ export default function Auth({navigation}) {
     </Container>
   );
 }
-
-const ListWrapper = styled.View`
-  flex: 1;
-`;
-
-const Container = styled.SafeAreaView`
-  flex: 1;
-  background-color: #ddf5ff;
-`;
-const Text = styled.Text`
-  font-size: 24;
-`;
-const ButtonCategory = styled.TouchableOpacity``;

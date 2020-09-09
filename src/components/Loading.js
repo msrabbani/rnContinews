@@ -1,7 +1,6 @@
 import React from 'react';
 import {ActivityIndicator} from 'react-native';
-import styled from 'styled-components';
-
+import {LoadingContainer} from '../styles';
 export default function Loading() {
   return (
     <LoadingContainer>
@@ -9,9 +8,3 @@ export default function Loading() {
     </LoadingContainer>
   );
 }
-
-const LoadingContainer = styled.View`
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-`;

@@ -1,9 +1,14 @@
 import React from 'react';
-import {FlatList, Dimensions, View} from 'react-native';
-import styled from 'styled-components/native';
+import {FlatList, View} from 'react-native';
 import {formatDate} from '../utils/helpers';
-
-const screenWidth = Dimensions.get('screen').width;
+import {
+  ActivityIndicatorStyle,
+  Container,
+  Title,
+  Subtitle,
+  Card,
+  ImageStyle,
+} from '../styles';
 
 export default function NewsList(props) {
   const renderItems = ({item, i}) => {
@@ -49,33 +54,3 @@ export default function NewsList(props) {
     </Container>
   );
 }
-
-const ActivityIndicatorStyle = styled.ActivityIndicator`
-  justify-content: center;
-  align-items: center;
-`;
-const Container = styled.SafeAreaView`
-  flex: 1;
-`;
-const Title = styled.Text`
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
-`;
-const Subtitle = styled.Text`
-  font-size: 11px;
-`;
-const Card = styled.TouchableOpacity`
-  padding: 5px;
-  margin: 10px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-  box-shadow: 0px 3px 3px #00000029;
-`;
-const ImageStyle = styled.Image`
-  width: ${screenWidth * 0.95};
-  height: 220px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-`;
