@@ -7,7 +7,6 @@ const heightScreen = Dimensions.get('screen').height;
 export const ListWrapper = styled.View`
   flex: 1;
 `;
-
 export const Container = styled.SafeAreaView`
   flex: 1;
   background-color: #ddf5ff;
@@ -95,4 +94,34 @@ export const ButtonText = styled.Text`
   letter-spacing: 1px;
   color: #ffff;
   font-weight: 600;
+`;
+
+// ======================================= Style for SignIn & SignUp
+
+export const ContainerSign = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const TextStyle = styled.Text``;
+
+export const TextStyleClick = styled.Text`
+  color: #fc9b1b;
+  font-weight: 600;
+`;
+
+export const TextInputStyle = styled.TextInput`
+  font-size: 15px;
+  padding: 10px;
+  background-color: #ffff;
+  width: 60%;
+`;
+
+export const TextinputWrapper = styled.View`
+  flex-direction: row;
+  background-color: #ffff;
+  border-radius: 5px;
+  margin-vertical: 10px;
+  align-items: center;
 `;
