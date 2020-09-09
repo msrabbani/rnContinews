@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "886618562707",
+    "firebase_url": "https://continews--signin.firebaseio.com",
+    "project_id": "continews--signin",
+    "storage_bucket": "continews--signin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:886618562707:android:2e186406f40386e77f2d66",
+        "android_client_info": {
+          "package_name": "com.rncontinews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "886618562707-51lqshc9ftus09i78olk1fm7vis384jg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeHItRVqQtFt1GYxM5nP3VpVlp5WkTaFQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "886618562707-51lqshc9ftus09i78olk1fm7vis384jg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "886618562707-c23b6sl3q8l37emn3e3v4p9gsrq1eqln.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "continews",
+                "app_store_id": "7777777"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
