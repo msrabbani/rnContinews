@@ -10,9 +10,10 @@ let req = new Request(url);
 
 export default function Auth({navigation}) {
   const [dataApi, seDataApi] = useState([]);
-  const [totalRes, setTotalRes] = useState(0);
+  const [arrSearchResult, setArrSearchResult] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [searchKeyword, setSearchKeyword] = useState('');
+  const [totalRes, setTotalRes] = useState(0);
 
   const fetchAllNews = () => {
     setIsLoading(true);
@@ -23,6 +24,7 @@ export default function Auth({navigation}) {
           setIsLoading(false);
           seDataApi(res.data);
           setTotalRes(res.totalNews);
+          setArrSearchResult(res.data);
         }
       });
   };
@@ -47,12 +49,25 @@ export default function Auth({navigation}) {
     fetchAllNews();
   }, []);
 
+  const filterSearch = (text, arr) => {
+    setSearchKeyword(text);
+    const newData =
+      arr &&
+      arr.filter((item) => {
+        const itemData = `${item.title.toUpperCase()}`;
+        const textData = searchKeyword.toUpperCase();
+        return itemData.indexOf(textData) > -1;
+      });
+    seDataApi(newData);
+    // return newData;
+  };
+
   return (
     <Container>
       <SearchBar
-        onPress={() => fetchSearchApi(searchKeyword)}
+        // onPress={() => fetchSearchApi(searchKeyword)}
         value={searchKeyword}
-        onChangeText={(text) => setSearchKeyword(text)}
+        onChangeText={(text) => filterSearch(text, arrSearchResult)}
       />
       <ListWrapper>
         {isLoading ? (
