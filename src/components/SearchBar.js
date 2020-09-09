@@ -1,11 +1,10 @@
 import React from 'react';
-// import Icon from 'react-native-vector-icons/dist/Fontisto';
+import Icon from 'react-native-vector-icons/dist/Fontisto';
 import {
   ContainerSB,
   TextinputWrapperSB,
   TextinputStyleSB,
-  UrutkanWrapperSB,
-  UrutkanTextSB,
+  SearchWrapper,
 } from './../styles';
 
 const SearchBar = ({text, onPress, onChangeText, value}) => {
@@ -15,19 +14,13 @@ const SearchBar = ({text, onPress, onChangeText, value}) => {
         <TextinputStyleSB
           placeholder="Search Title"
           underlineColorAndroid="transparent"
-          maxLength={25}
           onChangeText={onChangeText}
           value={value}
+          autoCorrect={false}
         />
-        <UrutkanWrapperSB onPress={onPress}>
-          <UrutkanTextSB
-            numberOfLines={1}
-            ellipsizeMode={'head'}
-            allowFontScaling={false}>
-            {text}
-          </UrutkanTextSB>
-          {/* <Icon name="angle-down" size={13} color={'orange'} /> */}
-        </UrutkanWrapperSB>
+        <SearchWrapper onPress={onPress}>
+          <Icon name="search" size={15} />
+        </SearchWrapper>
       </TextinputWrapperSB>
     </ContainerSB>
   );

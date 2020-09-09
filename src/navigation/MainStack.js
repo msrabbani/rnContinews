@@ -20,7 +20,7 @@ function BottomTabs() {
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({color, size}) => (
-            <Icon name="duck" color={'#333'} size={25} />
+            <Icon name="bulletin-board" color={'#333'} size={25} />
           ),
         }}
       />
@@ -30,7 +30,7 @@ function BottomTabs() {
         options={{
           // tabBarLabel: 'Technology',
           tabBarIcon: ({color, size}) => (
-            <Icon name="duck" color={'#333'} size={25} />
+            <Icon name="at" color={'#333'} size={25} />
           ),
         }}
       />
@@ -40,7 +40,7 @@ function BottomTabs() {
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({color, size}) => (
-            <Icon name="duck" color={'#333'} size={25} />
+            <Icon name="account-circle" color={'#333'} size={25} />
           ),
         }}
       />
@@ -56,7 +56,14 @@ export default function MainStack() {
         component={BottomTabs}
         options={{headerShown: false, title: 'Home'}}
       />
-      <Stack.Screen name="DetailsNews" component={DetailsNews} />
+      <Stack.Screen
+        name="DetailsNews"
+        component={DetailsNews}
+        options={{
+          title: 'Details',
+          headerStyle: {backgroundColor: '#ddf5ff'},
+        }}
+      />
     </Stack.Navigator>
   );
 }

@@ -26,7 +26,7 @@ export default function Routes() {
   if (loading) {
     return <Loading />;
   }
-  console.log('nih user di roots ==>>>', user);
+
   return (
     <NavigationContainer>
       {user ? <MainStack /> : <AuthStack />}

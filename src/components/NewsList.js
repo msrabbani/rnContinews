@@ -1,6 +1,7 @@
 import React from 'react';
 import {FlatList, Dimensions, View} from 'react-native';
 import styled from 'styled-components/native';
+import {formatDate} from '../utils/helpers';
 
 const screenWidth = Dimensions.get('screen').width;
 
@@ -8,9 +9,9 @@ export default function NewsList(props) {
   const renderItems = ({item, i}) => {
     return (
       <Card onPress={() => props.onPressItem(item)}>
-        <ImageStyle source={{uri: item.urlToImage}} />
+        <ImageStyle source={{uri: item.urlImage}} />
         <Title>{item.title}</Title>
-        <Subtitle>Publish Date: {item.publishedAt}</Subtitle>
+        <Subtitle>Publish Date: {formatDate(item.createdAt)}</Subtitle>
       </Card>
     );
   };

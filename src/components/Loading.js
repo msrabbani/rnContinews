@@ -5,7 +5,7 @@ import styled from 'styled-components';
 export default function Loading() {
   return (
     <LoadingContainer>
-      <ActivityIndicator size="large" color="#6646ee" />
+      <ActivityIndicator size="large" color="orange" />
     </LoadingContainer>
   );
 }

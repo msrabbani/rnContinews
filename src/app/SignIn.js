@@ -12,7 +12,12 @@ export default function SignIn({navigation}) {
   return (
     <Container>
       <TextinputWrapper>
-        <Icon name="duck" color={'#333'} size={25} style={{marginLeft: 12}} />
+        <Icon
+          name="account"
+          color={'#333'}
+          size={20}
+          style={{marginLeft: 12}}
+        />
         <TextInputStyle
           value={email}
           placeholder="Email"
@@ -24,7 +29,7 @@ export default function SignIn({navigation}) {
       </TextinputWrapper>
 
       <TextinputWrapper>
-        <Icon name="duck" color={'#333'} size={25} style={{marginLeft: 12}} />
+        <Icon name="eye" color={'#333'} size={20} style={{marginLeft: 12}} />
         <TextInputStyle
           value={password}
           placeholder="Password"
@@ -32,7 +37,10 @@ export default function SignIn({navigation}) {
           secureTextEntry={true}
         />
       </TextinputWrapper>
-      <Button buttonText={'Sign In'} onPress={() => signin(email, password)} />
+      <Button
+        buttonText={'Sign In'}
+        onPress={() => signin(email.trim(), password)}
+      />
       <TextStyle>Don't have an account?</TextStyle>
       <TextStyleClick onPress={() => navigation.navigate('SignUp')}>
         {' '}

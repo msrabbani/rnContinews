@@ -1,14 +1,22 @@
 import React, {useContext} from 'react';
-import {FlatList, SafeAreaView, Text} from 'react-native';
+import {Text} from 'react-native';
+import styled from 'styled-components';
 import Button from '../components/Button';
 import {AuthContext} from '../navigation/AuthProvider';
 
 export default function Profile({navigation}) {
   const {user, signout} = useContext(AuthContext);
   return (
-    <SafeAreaView>
-      <Text>{user.uid}</Text>
+    <Container>
+      <Text>Email: {user.email}</Text>
+      <Text>uid: {user.uid}</Text>
       <Button buttonText={'Sign Out'} onPress={() => signout()} />
-    </SafeAreaView>
+    </Container>
   );
 }
+
+const Container = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+`;
