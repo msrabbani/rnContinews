@@ -6,6 +6,7 @@ import Loading from '../components/Loading';
 
 let url = 'https://afternoon-cove-94635.herokuapp.com/news';
 let req = new Request(url);
+
 export default function Auth({navigation}) {
   const [dataApi, seDataApi] = useState([]);
   const [totalRes, setTotalRes] = useState(0);
@@ -30,11 +31,13 @@ export default function Auth({navigation}) {
     fetch(`http://localhost:7777/news?title=${keyword}`)
       .then((res) => res.json())
       .then((res) => {
+        console.log(res, '<<<res');
         if (res.status) {
           setIsLoading(false);
-
           seDataApi(res.data);
           setTotalRes(res.totalNews);
+        } else {
+          setIsLoading(false);
         }
       });
   };
@@ -43,8 +46,6 @@ export default function Auth({navigation}) {
     fetchAllNews();
   }, []);
 
-  console.log(searchKeyword, '<<==searchKeyword');
-
   return (
     <Container>
       <SearchBar
@@ -52,12 +53,15 @@ export default function Auth({navigation}) {
         value={searchKeyword}
         onChangeText={(text) => setSearchKeyword(text)}
       />
-      {isLoading && <Loading />}
       <ListWrapper>
-        <NewsList
-          data={dataApi}
-          onPressItem={(data) => navigation.navigate('DetailsNews', {data})}
-        />
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <NewsList
+            data={dataApi}
+            onPressItem={(data) => navigation.navigate('DetailsNews', {data})}
+          />
+        )}
       </ListWrapper>
     </Container>
   );

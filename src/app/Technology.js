@@ -30,19 +30,20 @@ export default function Technology({navigation}) {
   return (
     <Container>
       <ListWrapper>
-        {isLoading && <Loading />}
-        <NewsList
-          data={dataApi}
-          onPressItem={(data) => navigation.navigate('DetailsNews', {data})}
-        />
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <NewsList
+            data={dataApi}
+            onPressItem={(data) => navigation.navigate('DetailsNews', {data})}
+          />
+        )}
       </ListWrapper>
     </Container>
   );
 }
 
-const ListWrapper = styled.View`
-  flex: 1;
-`;
+const ListWrapper = styled.View``;
 
 const Container = styled.SafeAreaView`
   flex: 1;
